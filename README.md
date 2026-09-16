@@ -13,7 +13,7 @@ activity_data = {
     
     }
 
-
+#####
     
 df = pd.DataFrame(activity_data)
 df['status'] = df['purchased'].map({1: 'Buyer', 0: 'Non-Buyer'})
@@ -31,14 +31,14 @@ print(list(names_train))
 print("\n Testing Group")
 print(list(names_test))
 
-
+#####
 
 model = DecisionTreeClassifier (max_depth=3, random_state=42)
 model.fit(X_train, y_train)
 
 print("Model Trained on", len(X_train), "Customers")
 
-
+#####
 
 y_pred = model.predict(X_test)
 
@@ -50,7 +50,7 @@ results = pd.DataFrame({
 
 print(results)
 
-
+#####
 
 acc = accuracy_score(y_test, y_pred)
 print("Accuracy", round(acc*100,2), "%")
